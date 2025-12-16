@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+@theme {
+    --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif,
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+        "Noto Color Emoji";
+
+    /* ini penting supaya bg-primary, text-primary, bg-primary/20 dsb kebaca */
+    --color-primary: #004cff;
+}
+
+/* Chrome, Edge, Safari */
+.date-input-clean::-webkit-calendar-picker-indicator {
+    opacity: 0;
+    display: none;
+    -webkit-appearance: none;
+}
+
+/* Chrome, Edge */
+.date-input-clean::-webkit-inner-spin-button {
+    display: none;
+}
+
+/* Firefox */
+.date-input-clean {
+    appearance: none;
+    -moz-appearance: textfield;
+}
+
+/* === FLATPICKR CUSTOM THEME === */
+.flatpickr-calendar {
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0, 76, 255, 0.25);
+    font-family: inherit;
+}
+
+.flatpickr-months {
+    background: #004cff;
+    color: white;
+    border-radius: 16px 16px 0 0;
+}
+
+.flatpickr-weekdays {
+    background: #f5f8ff;
+}
+
+.flatpickr-weekday {
+    color: #004cff;
+    font-weight: 600;
+}
+
+.flatpickr-day.selected,
+.flatpickr-day.startRange,
+.flatpickr-day.endRange {
+    background: #004cff;
+    border-color: #004cff;
+    color: white;
+}
+
+.flatpickr-day:hover {
+    background: rgba(0, 76, 255, 0.15);
+}
+
+.flatpickr-day.today {
+    border-color: #004cff;
+}
+
+.flatpickr-day.today:hover {
+    background: #004cff;
+    color: white;
+}
+
+.flatpickr-current-month .flatpickr-monthDropdown-months,
+.flatpickr-current-month input.cur-year {
+    color: white;
+    font-weight: 600;
+}
+
+.flatpickr-prev-month svg,
+.flatpickr-next-month svg {
+    fill: white;
+}
+
+/* === FIX MONTH DROPDOWN VISIBILITY === */
+
+/* Dropdown container */
+.flatpickr-monthDropdown-months {
+    background-color: #ffffff;
+    color: #131313;
+    border-radius: 12px;
+    padding: 6px;
+}
+
+/* Month options */
+.flatpickr-monthDropdown-months option {
+    background-color: #ffffff;
+    color: #131313;
+    font-weight: 500;
+}
+
+/* Hover state */
+.flatpickr-monthDropdown-months option:hover {
+    background-color: rgba(0, 76, 255, 0.1);
+    color: #004cff;
+}
+
+/* Selected month */
+.flatpickr-monthDropdown-months option:checked {
+    background-color: #004cff;
+    color: #ffffff;
+}
