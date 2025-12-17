@@ -6,3 +6,8 @@ nixPkgs = [
   "php84Extensions.gd",
   "php84Extensions.bcmath"
 ]
+
+[phases.build]
+cmds = [
+  "echo 'skip node build for now'"
+]
