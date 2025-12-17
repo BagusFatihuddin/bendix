@@ -3,7 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Facades\Schema; // <-- penting, jangan lupa
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\URL; // ⬅️ TAMBAHKAN INI
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -12,6 +13,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        Schema::defaultStringLength(191); // <-- ini yang ngatasin error lu
+        Schema::defaultStringLength(191);
+
+        if (app()->environment('production')) {
+            URL::forceScheme('https');
+        }
     }
 }
