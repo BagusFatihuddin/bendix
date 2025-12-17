@@ -3,12 +3,7 @@
 @section('title', 'Booking - ' . $product->name)
 
 @section('content')
-{{-- @php
-    dd([
-        'booking_before_render' => session("booking.$product->id"),
-        'all' => session()->all(),
-    ]);
-@endphp --}}
+
 
 
 <div>
